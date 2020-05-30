@@ -37,6 +37,7 @@ class App extends React.Component {
 				<Search
 					searchChangeHandler={this.searchHandler}
 					searchField={this.state.searchField}
+					placeholder='search for monster'
 				/>
 				<CardList monsters={filteredMonsters} />
 			</div>
