@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>React not Rendered!!!</h1>
+    </div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script type="text/javascript">
+      const Person = (props) => {
+        console.log(props);
+        return React.createElement('div', {}, [
+          React.createElement('h1', {}, props.name),
+          React.createElement('p', {}, props.title),
+        ]);
+      };
+      const App = () => {
+        return React.createElement('div', {}, [
+          React.createElement(
+            Person,
+            {
+              name: 'Hridyaesh',
+              title: 'Software Engineer',
+            },
+            'I am from props.children'
+          ),
+          // React.createElement(Person, {
+          //   name: 'Yuhan',
+          //   title: 'Web Developer',
+          // }),
+          // React.createElement(Person, {
+          //   name: 'Andrie',
+          //   title: 'Software Engineer',
+          // }),
+        ]);
+      };
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
