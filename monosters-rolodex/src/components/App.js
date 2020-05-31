@@ -34,6 +34,7 @@ class App extends React.Component {
 		);
 		return (
 			<div className='App'>
+				<h1>Monsters Rolodex</h1>
 				<Search
 					searchChangeHandler={this.searchHandler}
 					searchField={this.state.searchField}
