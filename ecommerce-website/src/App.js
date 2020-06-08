@@ -3,11 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/homepage/Homepage';
 import ShopPage from './pages/shop/Shop';
-const HatsPage = () => (
-	<div>
-		<h1>HATS PAGE </h1>
-	</div>
-);
 
 function App(props) {
 	return (
