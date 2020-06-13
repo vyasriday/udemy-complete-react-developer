@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import HomePage from './pages/homepage/Homepage';
 import ShopPage from './pages/shop/Shop';
 import Header from './components/header/header';
@@ -45,6 +45,11 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header currentUser={this.state.currentUser} />
+				{this.state.currentUser ? (
+					<Redirect to='/' />
+				) : (
+					<Redirect to='/signin' />
+				)}
 				{/* match everything woth / or /* */}
 				<Switch>
 					<Route exact path='/' component={HomePage} />
