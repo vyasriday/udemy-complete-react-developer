@@ -6,12 +6,12 @@ import { toggleCardHidden } from '../../redux/cart/cart-actions';
 const CartIcon = ({ total, toggleCardHidden }) => (
 	<div className='cart-icon' onClick={toggleCardHidden}>
 		<ShoppingIcon className='shopping-icon' />
-		<span className='item-count'> 0</span>
+		<span className='item-count'> {total}</span>
 	</div>
 );
 
 const mapStateToProps = (state) => ({
-	total: state.cart.total,
+	total: state.cart.cartItems.length,
 });
 
 const mapStateToDispatch = (dispatch) => ({
