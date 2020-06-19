@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.util';
 import { connect } from 'react-redux';
 import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
 	<div className='header'>
 		<Link className='logo-container' to='/'>
 			<Logo />
@@ -29,12 +30,14 @@ const Header = ({ currentUser }) => (
 			)}
 			<CartIcon />
 		</div>
+		{hidden ? null : <CartDropdown />}
 	</div>
 );
 
 // state is the root reducer state that's passed down to this functions. The name of the function can be anything
-const mapStateToProps = (state) => ({
-	currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+	currentUser: currentUser,
+	hidden: hidden,
 });
 
 export default connect(mapStateToProps)(Header);
