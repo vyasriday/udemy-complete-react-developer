@@ -4,6 +4,7 @@ import './header.scss';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.util';
 import { connect } from 'react-redux';
+import CartIcon from '../cart-icon/CartIcon';
 
 const Header = ({ currentUser }) => (
 	<div className='header'>
@@ -26,6 +27,7 @@ const Header = ({ currentUser }) => (
 					Sign In
 				</Link>
 			)}
+			<CartIcon />
 		</div>
 	</div>
 );
