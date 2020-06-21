@@ -5,6 +5,7 @@ const { ADD_ITEM, TOGGLE_CARD_HIDDEN } = CartActionTypes;
 const INITIAL_STATE = {
 	hidden: true,
 	cartItems: [],
+	itemCount: 0,
 };
 const cartReducer = (state = INITIAL_STATE, action) => {
 	const { type, payload } = action;
