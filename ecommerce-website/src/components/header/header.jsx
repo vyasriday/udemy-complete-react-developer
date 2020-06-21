@@ -1,11 +1,15 @@
 import React from 'react';
 import { ReactComponent as Logo } from '../../assets/icons/crown.svg';
+import { createStructuredSelector } from 'reselect';
 import './header.scss';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.util';
 import { connect } from 'react-redux';
 import CartIcon from '../cart-icon/CartIcon';
 import CartDropdown from '../cart-dropdown/CartDropdown';
+
+import { selectCurrentUser } from '../../redux/user/user-selectors';
+import { selectCartHidden } from '../../redux/cart/cart-selectors';
 
 const Header = ({ currentUser, hidden }) => (
 	<div className='header'>
@@ -35,9 +39,9 @@ const Header = ({ currentUser, hidden }) => (
 );
 
 // state is the root reducer state that's passed down to this functions. The name of the function can be anything
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-	currentUser: currentUser,
-	hidden: hidden,
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser,
+	hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);
