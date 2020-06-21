@@ -52,12 +52,6 @@ provider.setCustomParameters({
 	prompt: 'select_account',
 });
 
-firestore
-	.collection('users')
-	.doc('ydT13tmrglAMaR9Yo5u1')
-	.collection('cartItems')
-	.doc('MrfMmWwgrO0tFtjQ2S8B');
-
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;

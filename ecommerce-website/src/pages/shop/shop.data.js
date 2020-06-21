@@ -5,28 +5,28 @@ export default [
 		routeName: 'hats',
 		items: [
 			{
-				id: 1,
+				id: 2,
 				name: 'Brown Brim',
 				imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
 				//imageUrl: '/images/shop-img/hats/brown-brim.png',
 				price: 25,
 			},
 			{
-				id: 2,
+				id: 3,
 				name: 'Blue Beanie',
 				imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
 				//imageUrl: '/images/shop-img/hats/blue-beanie.png',
 				price: 18,
 			},
 			{
-				id: 3,
+				id: 4,
 				name: 'Brown Cowboy',
 				imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
 				//imageUrl: '/images/shop-img/hats/brown-cowboy.png',
 				price: 35,
 			},
 			{
-				id: 4,
+				id: 5,
 				name: 'Grey Brim',
 				imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
 				//imageUrl: '/images/shop-img/hats/grey-brim.png',
